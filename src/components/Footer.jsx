@@ -8,7 +8,7 @@ function Footer() {
           <div className="row g-5">
             <div className="col-lg-3 col-md-6">
               <h4 className="text-white mb-4">Our Office</h4>
-              <p className="mb-2"><i className="fa fa-map-marker-alt me-3"></i>7776505 Roundrock trail, Plano, Texas USA</p>
+              <p className="mb-2"><i className="fa fa-map-marker-alt me-3"></i>6505 Roundrock trail, Plano, Texas USA</p>
               <p className="mb-2"><i className="fa fa-phone-alt me-3"></i>+1 469 674 5918</p>
               <p className="mb-2"><i className="fa fa-envelope me-3"></i>precisionanalyticsas@gmail.com</p>
               <div className="d-flex pt-2">
