@@ -23,7 +23,7 @@ function Home() {
   return (
     <>
       {/* Carousel Start */}
-      <div className="container-fluid p-0 mb-4 wow fadeIn" data-wow-delay="0.1s">
+      <div className="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div id="header-carousel" className="carousel slide carousel-fade" data-bs-ride="carousel">
           <div className="carousel-inner">
             <div className="carousel-item active">
