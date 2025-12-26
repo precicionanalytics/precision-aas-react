@@ -1,0 +1,8 @@
+# Robots.txt for Precision Analytics & Strategy
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://precisionanalytics.netlify.app/sitemap.xml
