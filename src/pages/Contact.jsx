@@ -21,19 +21,33 @@ function Contact() {
     
     if (window.emailjs) {
       try {
-        await window.emailjs.sendForm(
+        // Log for debugging
+        console.log("Sending email with EmailJS...");
+        
+        const result = await window.emailjs.sendForm(
           "service_iya0p4j",
           "template_uahy44b",
           e.target,
           "bzt043SqfyPCt646u"
         );
-        alert("Message sent successfully!");
+        
+        console.log("EmailJS Success:", result);
+        alert("Message sent successfully! We'll get back to you soon.");
         setFormData({ name: '', email: '', title: '', message: '' });
       } catch (error) {
-        alert("Failed to send message: " + JSON.stringify(error));
+        console.error("EmailJS Error Details:", error);
+        
+        // Show specific error message
+        let errorMsg = "Sorry, there was an issue sending your message.";
+        if (error.text) {
+          errorMsg += "\nError: " + error.text;
+        }
+        errorMsg += "\n\nPlease email us directly at: precisionanalyticsas@gmail.com";
+        
+        alert(errorMsg);
       }
     } else {
-      alert("Email service not loaded. Please try again later.");
+      alert("Email service not loaded. Please email us at: precisionanalyticsas@gmail.com");
     }
   };
 
@@ -55,7 +69,7 @@ function Contact() {
                       <input
                         type="text"
                         className="form-control"
-                        name="name"
+                        name="from_name"
                         id="name"
                         placeholder="Your Name"
                         value={formData.name}
@@ -70,7 +84,7 @@ function Contact() {
                       <input
                         type="email"
                         className="form-control"
-                        name="email"
+                        name="from_email"
                         id="email"
                         placeholder="Your Email"
                         value={formData.email}
@@ -86,7 +100,7 @@ function Contact() {
                         type="text"
                         className="form-control"
                         id="title"
-                        name="title"
+                        name="subject"
                         placeholder="Subject"
                         value={formData.title}
                         onChange={handleChange}
