@@ -3,9 +3,9 @@ import PageHeader from '../components/PageHeader';
 
 function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    title: '',
+    from_name: '',
+    from_email: '',
+    subject: '',
     message: ''
   });
 
@@ -33,7 +33,7 @@ function Contact() {
         
         console.log("EmailJS Success:", result);
         alert("Message sent successfully! We'll get back to you soon.");
-        setFormData({ name: '', email: '', title: '', message: '' });
+        setFormData({ from_name: '', from_email: '', subject: '', message: '' });
       } catch (error) {
         console.error("EmailJS Error Details:", error);
         
@@ -72,7 +72,7 @@ function Contact() {
                         name="from_name"
                         id="name"
                         placeholder="Your Name"
-                        value={formData.name}
+                        value={formData.from_name}
                         onChange={handleChange}
                         required
                       />
@@ -87,7 +87,7 @@ function Contact() {
                         name="from_email"
                         id="email"
                         placeholder="Your Email"
-                        value={formData.email}
+                        value={formData.from_email}
                         onChange={handleChange}
                         required
                       />
@@ -102,7 +102,7 @@ function Contact() {
                         id="title"
                         name="subject"
                         placeholder="Subject"
-                        value={formData.title}
+                        value={formData.subject}
                         onChange={handleChange}
                         required
                       />
