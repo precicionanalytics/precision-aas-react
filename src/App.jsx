@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -10,7 +10,18 @@ import Features from './pages/Features';
 import Contact from './pages/Contact';
 import Health from './pages/Health';
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Track page views with Google Analytics
+    if (window.gtag) {
+      window.gtag('config', 'G-SEHMRL89BD', {
+        page_path: location.pathname + location.search
+      });
+    }
+  }, [location]);
+
   useEffect(() => {
     // Initialize WOW.js when available
     if (window.WOW) {
@@ -42,7 +53,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <>
       <Spinner />
       <Navbar />
       <Routes>
@@ -54,6 +65,14 @@ function App() {
         <Route path="/health" element={<Health />} />
       </Routes>
       <Footer />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }
