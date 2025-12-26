@@ -25,7 +25,7 @@ function Contact() {
         console.log("Sending email with EmailJS...");
         
         const result = await window.emailjs.sendForm(
-          "service_iya0p4j",
+          "service_d7z1ziq",
           "template_uahy44b",
           e.target,
           "bzt043SqfyPCt646u"
