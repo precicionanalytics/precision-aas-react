@@ -26,9 +26,9 @@ function Contact() {
         
         const result = await window.emailjs.sendForm(
           "service_d7z1ziq",
-          "template_uahy44b",
+          "template_av72zx6",
           e.target,
-          "bzt043SqfyPCt646u"
+          "mOVbL7h8YKppC1fsN"
         );
         
         console.log("EmailJS Success:", result);

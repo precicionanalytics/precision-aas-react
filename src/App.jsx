@@ -33,7 +33,7 @@ function App() {
     
     // Initialize EmailJS
     if (window.emailjs) {
-      window.emailjs.init("bzt043SqfyPCt646u");
+      window.emailjs.init("mOVbL7h8YKppC1fsN");
     }
 
     return () => {
